@@ -1,5 +1,6 @@
 import java.io.*;
 import java.nio.file.Files;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -34,5 +35,18 @@ public class FileStudy {
             Logger logger=Logger.getLogger(FileStudy.class.getName());
             logger.log(Level.SEVERE,"无法读取文件",e);
         }
+
+
+        //学Scanner类,用于获取用户输入
+        Scanner scanner=new Scanner(System.in);
+
+        //Next可以改为NextLine，前者不能得到带有空格的字符串，后者是返回输入回车前的所有字符
+        if(scanner.hasNext()){
+            String line=scanner.next();
+            System.out.println(line);
+        }
+        scanner.close();
+
+
     }
 }
